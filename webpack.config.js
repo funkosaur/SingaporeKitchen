@@ -12,7 +12,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Development',
+      title: 'Singapore Kitchen',
+      template: './src/index.html',
     }),
   ],
   output: {
