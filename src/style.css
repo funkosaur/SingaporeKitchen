@@ -1,0 +1,101 @@
+@import './reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@100&family=Quicksand&family=Staatliches&family=Ubuntu+Mono&family=Unna&display=swap');
+
+* {
+    box-sizing: border-box;
+  }
+
+:root {
+  --brightYellow: rgb(225,177,0);
+  --lightYellow: rgb(232,226,190);
+  --white: rgb(254,254,254);
+  --dark: rgb(36,36,36);
+  --darker: rgb(93,95,96);
+}
+
+
+
+body {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.2fr;
+  grid-template-rows: 16em 80em 20em;
+  background-color: var(--dark);
+
+}
+
+header {
+  grid-row: 1/2;
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.2fr;
+  background-color: rgb(36, 36, 36);
+}
+
+#content {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  background-color: black;
+}
+
+footer {
+  grid-row: 3/4;
+  grid-column: 2/3;
+  background-color: blue;
+}
+
+.header-div {
+  grid-column: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#house {
+  height: 90%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.navigation {
+  color: var(--white);
+  padding: 1em 0em 1em 0em;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  font-family: "Unna";
+  font-size: 1.2em;
+  
+}
+
+.navigation:hover {
+  background-color: var(--darker);
+}
+
+#chickenImg img {
+  width: 100%;
+  opacity: 0.4;
+}
+
+#chickenImg {
+  position: relative;
+}
+
+#motto {
+  color: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+  font-family: 'Ubuntu Mono';
+  font-weight: bold;
+  font-size: 3em;
+
+}
