@@ -1,26 +1,27 @@
-@import './reset.css';
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@100&family=Quicksand&family=Staatliches&family=Ubuntu+Mono&family=Unna&display=swap');
+@import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100&family=Quicksand&family=Staatliches&family=Ubuntu+Mono&family=Unna&display=swap");
 
 * {
-    box-sizing: border-box;
-  }
-
-:root {
-  --brightYellow: rgb(225,177,0);
-  --lightYellow: rgb(232,226,190);
-  --white: rgb(254,254,254);
-  --dark: rgb(36,36,36);
-  --darker: rgb(93,95,96);
+  box-sizing: border-box;
 }
 
-
+:root {
+  --brightYellow: rgb(225, 177, 0);
+  --lightYellow: rgb(232, 226, 190);
+  --white: rgb(254, 254, 254);
+  --dark: rgb(36, 36, 36);
+  --darker: rgb(93, 95, 96);
+  --linear-dark: hsla(0, 0%, 20%, 0.315);
+  --linear-darker: hsla(0, 0%, 13%, 0.692);
+}
 
 body {
   display: grid;
-  grid-template-columns: 0.2fr 1fr 0.2fr;
-  grid-template-rows: 16em 80em 20em;
+  grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+  grid-template-rows: 50em 80em 20em;
   background-color: var(--dark);
-
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -29,6 +30,8 @@ header {
   display: grid;
   grid-template-columns: 0.2fr 1fr 0.2fr;
   background-color: rgb(36, 36, 36);
+  background: linear-gradient(var(--linear-darker), var(--linear-dark)),
+    url("./chicken.jpg") no-repeat center top / cover;
 }
 
 #content {
@@ -70,7 +73,6 @@ footer {
   transition: all 0.2s ease-in-out;
   font-family: "Unna";
   font-size: 1.2em;
-  
 }
 
 .navigation:hover {
@@ -94,8 +96,7 @@ footer {
   transform: translate(-50%, -50%);
   width: 90%;
   text-align: center;
-  font-family: 'Ubuntu Mono';
+  font-family: "Ubuntu Mono";
   font-weight: bold;
   font-size: 3em;
-
 }
