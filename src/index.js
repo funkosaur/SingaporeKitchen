@@ -12,6 +12,9 @@ const heading = (() => {
     myhouseImg.src = houseImg;
     pictureDiv.appendChild(myhouseImg);
     headerDiv.appendChild(pictureDiv);
+    const mottoButton = document.createElement('div');
+    mottoButton.classList.add("motto-button");
+    headerDiv.appendChild(mottoButton);
     const navDiv = document.createElement('div');
     navDiv.classList.add("navbar");
     const homeDiv = document.createElement('div');
