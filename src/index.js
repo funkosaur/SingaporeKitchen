@@ -14,6 +14,18 @@ const heading = (() => {
     headerDiv.appendChild(pictureDiv);
     const mottoButton = document.createElement('div');
     mottoButton.classList.add("motto-button");
+    const motto = document.createElement('div');
+    motto.setAttribute('id', "motto");
+    motto.textContent = 'Chinese Takeaway Done Right'
+    mottoButton.appendChild(motto);
+    const orderButton = document.createElement('button');
+    orderButton.textContent = "Order Online"
+    orderButton.setAttribute('id', "orderButton");
+    mottoButton.appendChild(orderButton);
+    const restaurantAddress = document.createElement('div');
+    restaurantAddress.setAttribute("id", "rAddress");
+    restaurantAddress.textContent = "19 Blachington Road, Hove BN3 3YP"
+    mottoButton.appendChild(restaurantAddress);
     headerDiv.appendChild(mottoButton);
     const navDiv = document.createElement('div');
     navDiv.classList.add("navbar");
@@ -60,7 +72,7 @@ const contentDivs = (() => {
     contentDiv.appendChild(chickenImgDiv);
     chickenImgDiv.appendChild(foodImg);
     const motto = document.createElement('div');
-    motto.setAttribute('id', "motto");
+    motto.setAttribute('id', "moetto");
     motto.textContent = '"Chinese Takeaway Done Right"'
     chickenImgDiv.appendChild(motto)
 

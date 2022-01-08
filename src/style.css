@@ -11,8 +11,8 @@
   --white: rgb(254, 254, 254);
   --dark: rgb(36, 36, 36);
   --darker: rgb(93, 95, 96);
-  --linear-dark: hsla(0, 0%, 20%, 0.315);
-  --linear-darker: hsla(0, 0%, 13%, 0.692);
+  --linear-dark: hsla(0, 0%, 0%, 0.445);
+  --linear-darker: hsla(0, 0%, 0%, 0.712);
 }
 
 body {
@@ -28,7 +28,7 @@ header {
   grid-row: 1/2;
   grid-column: 1/4;
   display: grid;
-  grid-template-columns: 0.2fr 1fr 0.2fr;
+  grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
   background-color: rgb(36, 36, 36);
   background: linear-gradient(var(--linear-darker), var(--linear-dark)),
     url("./chicken.jpg") no-repeat center top / cover;
@@ -49,13 +49,11 @@ footer {
 .header-div {
   grid-column: 2/3;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
 }
-#house {
-  height: 90%;
-}
+
 
 .navbar {
   display: flex;
@@ -64,6 +62,8 @@ footer {
 }
 
 .navigation {
+  background-color: rgb(12, 12, 12);
+  font-weight: bold;
   color: var(--white);
   padding: 1em 0em 1em 0em;
   width: 50%;
@@ -72,7 +72,7 @@ footer {
   align-items: center;
   transition: all 0.2s ease-in-out;
   font-family: "Unna";
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 .navigation:hover {
@@ -90,13 +90,33 @@ footer {
 
 #motto {
   color: var(--white);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
   text-align: center;
-  font-family: "Ubuntu Mono";
   font-weight: bold;
   font-size: 3em;
+  width: 70%;
+}
+
+.motto-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 30%;
+  font-family: "Unna";
+}
+
+#orderButton {
+  border: none;
+  background-color: rgb(12, 12, 12);
+  color: var(--brightYellow);
+  width: 40%;
+  height: 25%;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 1em;
+}
+
+#rAddress {
+  color: var(--white);
+  font-size: 1.2em;
 }
