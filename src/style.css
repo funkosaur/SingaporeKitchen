@@ -76,7 +76,7 @@ footer {
 }
 
 .navigation:hover {
-  background-color: var(--darker);
+  background-color: var(--brightYellow);
 }
 
 #chickenImg img {
@@ -108,12 +108,17 @@ footer {
 #orderButton {
   border: none;
   background-color: rgb(12, 12, 12);
-  color: var(--brightYellow);
+  color: var(--white);
   width: 40%;
   height: 25%;
   font-size: 1.5em;
   font-weight: bold;
   border-radius: 1em;
+  transition: all 0.2s ease-in-out;
+}
+
+#orderButton:hover {
+  background-color: var(--brightYellow);
 }
 
 #rAddress {

@@ -66,11 +66,8 @@ const heading = (() => {
 const contentDivs = (() => {
     const contentDiv = document.querySelector('#content');
     const chickenImgDiv = document.createElement('div');
-    chickenImgDiv.setAttribute('id', "chickenImg")
-    const foodImg = document.createElement('img');
-    foodImg.src = chickenImg;
+    chickenImgDiv.setAttribute('id', "chickenImg");
     contentDiv.appendChild(chickenImgDiv);
-    chickenImgDiv.appendChild(foodImg);
     const motto = document.createElement('div');
     motto.setAttribute('id', "moetto");
     motto.textContent = '"Chinese Takeaway Done Right"'
