@@ -70,7 +70,7 @@ const contentDivs = (() => {
     contentDiv.appendChild(chickenImgDiv);
     const motto = document.createElement('div');
     motto.setAttribute('id', "moetto");
-    motto.textContent = '"Chinese Takeaway Done Right"'
+    motto.textContent = 'Order directly with us and cut out the middleman. Better prices if you go directly to our ordering platform. We will be running offers and deals throughout the year.'
     chickenImgDiv.appendChild(motto)
 
 
