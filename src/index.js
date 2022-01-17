@@ -165,7 +165,10 @@ const contentDivs = (() => {
     const storeDetailsDiv = document.createElement('div');
     storeDetailsDiv.setAttribute('id', "storeDetailsDiv");
     storeDetails.appendChild(storeDetailsDiv);
-    storeDetailsDiv.textContent = "19 Blachington Road Hove East Sussex BN33YP 01273736251 singaporekitchenhove@gmail.com";
+    storeDetailsDiv.textContent = "19 Blachington Road \r\n"
+    storeDetailsDiv.textContent += "Hove East Sussex BN33YP \r\n"
+    storeDetailsDiv.textContent += "01273736251 \r\n"
+    storeDetailsDiv.textContent += "singaporekitchenhove@gmail.com";
     const mapOfRestaurantDiv = document.createElement('div');
     const mapOfRestaurant = document.createElement('iframe');
     mapOfRestaurant.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1453.1036452526012!2d-0.1772053818619935!3d50.83165735490886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4875854e92138e81%3A0xe7c1b4d572d5e344!2sSingapore%20Kitchen!5e0!3m2!1sen!2sch!4v1642003936251!5m2!1sen!2sch"
