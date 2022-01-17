@@ -1,6 +1,11 @@
 import './style.css';
-import houseImg from './house.webp';
-import chickenImg from './chicken.jpg';
+import houseImg from './images/house.webp';
+import deliverooLogo from './images/deliveroo-logo.png';
+import justEatLogo from './images/Just-Eat-Logo.png';
+import uberEatsLogo from './images/Uber-Eats-Logo.png';
+import hygieneRatingLogo from './images/hygiene-rating.webp';
+import storeFrontImg from "./images/storefront.jpg"
+
 
 const heading = (() => {
     const header = document.getElementById("myHeader");
@@ -65,18 +70,143 @@ const heading = (() => {
 
 const contentDivs = (() => {
     const contentDiv = document.querySelector('#content');
-    const chickenImgDiv = document.createElement('div');
-    chickenImgDiv.setAttribute('id', "chickenImg");
-    contentDiv.appendChild(chickenImgDiv);
-    const motto = document.createElement('div');
-    motto.setAttribute('id', "moetto");
-    motto.textContent = 'Order directly with us and cut out the middleman. Better prices if you go directly to our ordering platform. We will be running offers and deals throughout the year.'
-    chickenImgDiv.appendChild(motto)
+    const offersAndMenu = document.createElement('div');
+    offersAndMenu.setAttribute('id', "offersAndMenu");
+    contentDiv.appendChild(offersAndMenu);
+    const offersText = document.createElement('div');
+    offersText.setAttribute('id', "offersText");
+    const offersTextPara = document.createElement('p');
+    offersTextPara.textContent = 'Order directly with us and cut out the middleman. Better prices if you go directly to our ordering platform. We will be running offers and deals throughout the year.'
+    offersText.appendChild(offersTextPara);
+    offersAndMenu.appendChild(offersText);
+    const foodHygiene = document.createElement('div');
+    foodHygiene.setAttribute('id', "foodHygiene");
+    const foodHygieneImg = document.createElement('img');
+    foodHygieneImg.src = hygieneRatingLogo;
+    foodHygiene.appendChild(foodHygieneImg);
+    offersAndMenu.appendChild(foodHygiene);
+    const menuPdf = document.createElement('div');
+    menuPdf.setAttribute('id', "menuPdf");
+    offersAndMenu.appendChild(menuPdf);
+    menuPdf.textContent = "If you would like to view our menu click here:";
+    const pdfButton = document.createElement('button', "pdfButton");
+    pdfButton.setAttribute('id', "pdfButton");
+    menuPdf.appendChild(pdfButton);
+    pdfButton.textContent = "MENU PDF";
+    const otherWaysText = document.createElement('div');
+    otherWaysText.setAttribute('id', "otherWaysText");
+    otherWaysText.textContent = "Other ways to order :"
+    const otherWaysDiv = document.createElement('div');
+    otherWaysDiv.setAttribute('id', "otherWaysDiv");
+    const deliverooImg = document.createElement('img');
+    deliverooImg.src = deliverooLogo;
+    deliverooImg.style.width = "25%";
+    deliverooImg.style.height = "65%";
+    const justEatImg = document.createElement('img');
+    justEatImg.src = justEatLogo;
+    justEatImg.style.width = "25%";
+    justEatImg.style.height = "65%";
+    const uberEatsImg = document.createElement('img');
+    uberEatsImg.src = uberEatsLogo;
+    uberEatsImg.style.width = "25%";
+    uberEatsImg.style.height = "65%";
+    otherWaysDiv.appendChild(deliverooImg);
+    otherWaysDiv.appendChild(justEatImg);
+    otherWaysDiv.appendChild(uberEatsImg);
+    offersAndMenu.appendChild(otherWaysText);
+    offersAndMenu.appendChild(otherWaysDiv);
+    const contactPage = document.createElement('div');
+    contactPage.setAttribute('id', "contactPage");
+    contentDiv.appendChild(contactPage);
+    const contactForm = document.createElement('div');
+    const inputName = document.createElement("input");
+    inputName.classList.add("inputs")
+    const inputEmail = document.createElement("input");
+    inputEmail.classList.add("inputs");
+    const inputSubject = document.createElement("input");
+    inputSubject.classList.add("inputs");
+    const inputMessage = document.createElement("textarea");
+    inputMessage.classList.add("inputs");
+    inputMessage.style.height = "30%";
+    const contactUs = document.createElement("p");
+    contactUs.textContent = "Contact Us";
+    contactUs.setAttribute("id", "contactUs");
+    contactForm.appendChild(contactUs);
+    const paraName = document.createElement("p");
+    paraName.textContent = "Name:";
+    contactForm.appendChild(paraName);
+    contactForm.appendChild(inputName);
+    const paraEmail = document.createElement("p");
+    paraEmail.textContent = "Email:";
+    contactForm.appendChild(paraEmail);
+    contactForm.appendChild(inputEmail);
+    const paraSubject = document.createElement("p");
+    paraSubject.textContent = "Subject:";
+    contactForm.appendChild(paraSubject);
+    contactForm.appendChild(inputSubject);
+    const paraMessage = document.createElement("p");
+    paraMessage.textContent = "Message:";
+    contactForm.appendChild(paraMessage);
+    contactForm.appendChild(inputMessage);
+    const sendButton = document.createElement("button")
+    contactForm.appendChild(sendButton);
+    sendButton.textContent = "Send";
+    contactForm.setAttribute('id', "contactForm");
+    contactPage.appendChild(contactForm);
+    const storeDetails = document.createElement('div');
+    const storeFront = document.createElement("img");
+    storeFront.src = storeFrontImg;
+    storeDetails.appendChild(storeFront);
+    storeDetails.setAttribute('id', "storeDetails");
+    contactPage.appendChild(storeDetails);
+    const storeDetailsImg = document.createElement('div');
+    storeDetailsImg.setAttribute('id', "storeDetailsImg");
+    storeDetails.appendChild(storeDetailsImg);
+    const storeDetailsDiv = document.createElement('div');
+    storeDetailsDiv.setAttribute('id', "storeDetailsDiv");
+    storeDetails.appendChild(storeDetailsDiv);
+    storeDetailsDiv.textContent = "19 Blachington Road Hove East Sussex BN33YP 01273736251 singaporekitchenhove@gmail.com";
+    const mapOfRestaurantDiv = document.createElement('div');
+    const mapOfRestaurant = document.createElement('iframe');
+    mapOfRestaurant.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1453.1036452526012!2d-0.1772053818619935!3d50.83165735490886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4875854e92138e81%3A0xe7c1b4d572d5e344!2sSingapore%20Kitchen!5e0!3m2!1sen!2sch!4v1642003936251!5m2!1sen!2sch"
+    mapOfRestaurant.loading = "lazy";
+    mapOfRestaurant.allowFullScreen = "";
+    mapOfRestaurantDiv.appendChild(mapOfRestaurant)
+    mapOfRestaurantDiv.setAttribute('id', "mapOfRestaurantDiv");
+    mapOfRestaurant.setAttribute("id", "mapOfRestaurant")
+    contentDiv.appendChild(mapOfRestaurantDiv);
+})();
 
-
+const footer  = (() => {
+    const footerDiv = document.getElementById("footer");
+    const leftAddress = document.createElement("div");
+    leftAddress.classList.add("footerDivs");
+    footerDiv.appendChild(leftAddress);
+    const openingHours = document.createElement("div");
+    openingHours.classList.add("footerDivs");
+    footerDiv.appendChild(openingHours);
+    const contactDiv = document.createElement("div");
+    contactDiv.classList.add("footerDivs");
+    footerDiv.appendChild(contactDiv);
+    const followDiv = document.createElement("div");
+    followDiv.classList.add("footerDivs");
+    footerDiv.appendChild(followDiv);
+    
     
 
 
 
 
+
+
 })();
+
+
+
+
+
+
+
+
+
+
