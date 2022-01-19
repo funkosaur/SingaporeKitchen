@@ -182,18 +182,21 @@ const contentDivs = (() => {
 
 const footer  = (() => {
     const footerDiv = document.getElementById("footer");
+    const footerSubDiv = document.createElement("div");
+    footerSubDiv.setAttribute('id', "footerSubDiv")
+    footerDiv.appendChild(footerSubDiv);
     const leftAddress = document.createElement("div");
     leftAddress.classList.add("footerDivs");
-    footerDiv.appendChild(leftAddress);
+    footerSubDiv.appendChild(leftAddress);
     const openingHours = document.createElement("div");
     openingHours.classList.add("footerDivs");
-    footerDiv.appendChild(openingHours);
+    footerSubDiv.appendChild(openingHours);
     const contactDiv = document.createElement("div");
     contactDiv.classList.add("footerDivs");
-    footerDiv.appendChild(contactDiv);
+    footerSubDiv.appendChild(contactDiv);
     const followDiv = document.createElement("div");
     followDiv.classList.add("footerDivs");
-    footerDiv.appendChild(followDiv);
+    footerSubDiv.appendChild(followDiv);
     
     
 

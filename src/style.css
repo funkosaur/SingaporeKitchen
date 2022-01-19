@@ -222,6 +222,7 @@ header {
   margin-bottom: 3%;
   margin-top: 1%;
   width: 100%;
+  resize: none;
 }
 
 #contactForm button {
@@ -277,5 +278,12 @@ footer {
   grid-row: 3/4;
   grid-column: 1/4;
   background: linear-gradient(var(--dark), rgb(80, 80, 80));
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 63em) 1fr;
 }
 
+#footerSubDiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
