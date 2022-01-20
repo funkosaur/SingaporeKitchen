@@ -4,7 +4,10 @@ import deliverooLogo from './images/deliveroo-logo.png';
 import justEatLogo from './images/Just-Eat-Logo.png';
 import uberEatsLogo from './images/Uber-Eats-Logo.png';
 import hygieneRatingLogo from './images/hygiene-rating.webp';
-import storeFrontImg from "./images/storefront.jpg"
+import storeFrontImg from "./images/storefront.jpg";
+import facebookImg from "./images/facebook.png";
+import instagramImg from "./images/instagram.png";
+import twitterImg from "./images/twitter.png";
 
 
 const heading = (() => {
@@ -187,15 +190,55 @@ const footer  = (() => {
     footerDiv.appendChild(footerSubDiv);
     const leftAddress = document.createElement("div");
     leftAddress.classList.add("footerDivs");
+    leftAddress.textContent = "ADDRESS"
+    const leftAddressBottom = document.createElement("p");
+    leftAddressBottom.setAttribute('id', "leftAddressBottom");
+    leftAddressBottom.textContent = "Singapore Kitchen \r\n"
+    leftAddressBottom.textContent += "19 Blachington Road \r\n"
+    leftAddressBottom.textContent += "Hove \r\n"
+    leftAddressBottom.textContent += "East Sussex \r\n"
+    leftAddressBottom.textContent += "BN33YP";
+    leftAddress.appendChild(leftAddressBottom);
     footerSubDiv.appendChild(leftAddress);
     const openingHours = document.createElement("div");
     openingHours.classList.add("footerDivs");
+    openingHours.textContent = "OPENING HOURS"
+    const openingHoursBottom = document.createElement("p");
+    openingHoursBottom.setAttribute('id', "openingHoursBottom");
+    openingHoursBottom.textContent = "Sunday - Saturday \r\n"
+    openingHoursBottom.textContent += "5:00pm - 10:00pm"
+    openingHours.appendChild(openingHoursBottom);
     footerSubDiv.appendChild(openingHours);
     const contactDiv = document.createElement("div");
     contactDiv.classList.add("footerDivs");
+    contactDiv.textContent = "CONTACT"
+    const contactDivBottom = document.createElement("p");
+    contactDivBottom.setAttribute('id', "contactDivBottom");
+    contactDivBottom.textContent = "01273 736251 \r\n"
+    contactDivBottom.textContent += "singaporekitchen@gmail.com";
+    contactDiv.appendChild(contactDivBottom);
     footerSubDiv.appendChild(contactDiv);
     const followDiv = document.createElement("div");
     followDiv.classList.add("footerDivs");
+    followDiv.textContent = "FOLLOW"
+    const followDivBottom = document.createElement("div");
+    followDivBottom.setAttribute('id', "followDivBottom");
+    const facebookImage = document.createElement("img");
+    facebookImage.src = facebookImg;
+    followDivBottom.appendChild(facebookImage);
+    facebookImage.style.height = "20%";
+    facebookImage.style.width = "20%";
+    const instagramImage = document.createElement("img");
+    instagramImage.src = instagramImg;
+    followDivBottom.appendChild(instagramImage);
+    instagramImage.style.height = "20%";
+    instagramImage.style.width = "20%";
+    const twitterImage = document.createElement("img");
+    twitterImage.src = twitterImg;
+    followDivBottom.appendChild(twitterImage);
+    twitterImage.style.height = "20%";
+    twitterImage.style.width = "23%";
+    followDiv.appendChild(followDivBottom);
     footerSubDiv.appendChild(followDiv);
     
     
