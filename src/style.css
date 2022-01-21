@@ -139,6 +139,34 @@ header {
   font-family: var(--main-font);
 }
 
+#offersText::before {
+  content: '"';
+  display: block;
+  position: relative;
+  z-index: 1;
+  opacity: 0.3;
+  font-size: 200px;
+  color: rgb(31, 31, 31);
+  font-family: var(--main-font);
+  font-weight: 600;
+  top: -100px;
+  left: -100px;
+}
+
+#offersText::after {
+  content: '"';
+  display: block;
+  position: relative;
+  z-index: 1;
+  opacity: 0.3;
+  font-size: 200px;
+  color: rgb(31, 31, 31);
+  font-family: var(--main-font);
+  font-weight: 600;
+  bottom: -150px;
+  right: -100px;
+}
+
 #foodHygiene {
   grid-column: 1/2;
   grid-row: 2/3;
@@ -299,7 +327,8 @@ footer {
   margin-top: 0.5em;
   font-size: 1em;
   font-weight: normal;
-  color:rgb(225, 177, 0)
+  color:var(--brightYellow);
+  line-height: 1.2em;
 }
 
 .footerDivs:last-child {
