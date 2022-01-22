@@ -8,6 +8,7 @@ import storeFrontImg from "./images/storefront.jpg";
 import facebookImg from "./images/facebook.png";
 import instagramImg from "./images/instagram.png";
 import twitterImg from "./images/twitter.png";
+import services from './services.js';
 
 
 const heading = (() => {
@@ -26,7 +27,9 @@ const heading = (() => {
     motto.setAttribute('id', "motto");
     motto.textContent = 'Chinese Takeaway Done Right'
     mottoButton.appendChild(motto);
-    const orderButton = document.createElement('button');
+    const orderButton = document.createElement('a');
+    orderButton.href = "https://www.singaporekitchen.co.uk/order-online";
+    orderButton.target = '_blank';
     orderButton.textContent = "Order Online"
     orderButton.setAttribute('id', "orderButton");
     mottoButton.appendChild(orderButton);
@@ -41,7 +44,9 @@ const heading = (() => {
     homeDiv.setAttribute('id', "home");
     homeDiv.classList.add("navigation");
     homeDiv.textContent = "Home";
-    const orderOnlineDiv = document.createElement('div');
+    const orderOnlineDiv = document.createElement('a');
+    orderOnlineDiv.href = "https://www.singaporekitchen.co.uk/order-online";
+    orderOnlineDiv.target = '_blank';
     orderOnlineDiv.setAttribute('id', "orderOnline");
     orderOnlineDiv.classList.add("navigation");
     orderOnlineDiv.textContent = "Order Online";
@@ -49,6 +54,9 @@ const heading = (() => {
     servicesDiv.setAttribute('id', "services");
     servicesDiv.classList.add("navigation");
     servicesDiv.textContent = "Services"
+    servicesDiv.addEventListener('click', () => {
+        
+    })
     const galleryDiv = document.createElement('div');
     galleryDiv.setAttribute('id', "gallery");
     galleryDiv.classList.add("navigation");
@@ -92,7 +100,9 @@ const contentDivs = (() => {
     menuPdf.setAttribute('id', "menuPdf");
     offersAndMenu.appendChild(menuPdf);
     menuPdf.textContent = "If you would like to view our menu click here:";
-    const pdfButton = document.createElement('button', "pdfButton");
+    const pdfButton = document.createElement('a', "pdfButton");
+    pdfButton.target = "_blank"
+    pdfButton.href = "https://www.singaporekitchen.co.uk/_files/ugd/38e767_3dfd7535ccc749e59c94a341947ca1e2.pdf";
     pdfButton.setAttribute('id', "pdfButton");
     menuPdf.appendChild(pdfButton);
     pdfButton.textContent = "MENU PDF";
@@ -240,14 +250,6 @@ const footer  = (() => {
     twitterImage.style.width = "23%";
     followDiv.appendChild(followDivBottom);
     footerSubDiv.appendChild(followDiv);
-    
-    
-
-
-
-
-
-
 })();
 
 

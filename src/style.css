@@ -94,6 +94,9 @@ header {
 }
 
 #orderButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   background-color: var(--black);
   color: var(--white);
@@ -104,6 +107,11 @@ header {
   border-radius: 1em;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  text-decoration: none;
+}
+
+#orderOnline {
+  text-decoration: none;
 }
 
 #orderButton:hover {
@@ -180,6 +188,7 @@ header {
   width: 80%;
 }
 
+
 #menuPdf {
   grid-column: 2/3;
   grid-row: 2/3;
@@ -191,7 +200,10 @@ header {
   font-size: 2em;
 }
 
-#menuPdf button {
+#menuPdf a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 80%;
   height: 55%;
   font-size: 1.5em;
@@ -201,9 +213,10 @@ header {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   border-radius: 1em;
+  text-decoration: none;
 }
 
-#menuPdf button:hover {
+#menuPdf a:hover {
   background-color: var(--brightYellow);
 }
 
