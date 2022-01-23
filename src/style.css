@@ -40,7 +40,7 @@ header {
 #content {
   grid-row: 2/3;
   grid-column: 2/3;
-  background-color: var(--dark);
+  background: black;
 }
 
 .header-div {
@@ -318,10 +318,11 @@ header {
 footer {
   grid-row: 3/4;
   grid-column: 1/4;
-  background: linear-gradient(var(--dark), rgb(80, 80, 80));
+  background: linear-gradient(rgb(73, 73, 73), rgb(12, 12, 12));
   display: grid;
   grid-template-columns: 1fr minmax(auto, 63em) 1fr;
   grid-template-rows: 0.1fr 1fr;
+  border-top: rgb(100, 100, 100) 1px solid;
 }
 
 #footerSubDiv {

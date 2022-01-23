@@ -13,6 +13,7 @@ import services from './services.js';
 
 const heading = (() => {
     const header = document.getElementById("myHeader");
+    const contentDiv = document.querySelector('#content');
     const headerDiv = document.createElement('div');
     headerDiv.classList.add("header-div");
     const pictureDiv = document.createElement('div');
@@ -55,7 +56,8 @@ const heading = (() => {
     servicesDiv.classList.add("navigation");
     servicesDiv.textContent = "Services"
     servicesDiv.addEventListener('click', () => {
-        
+        while ( contentDiv.firstChild ) contentDiv.removeChild( contentDiv.firstChild);
+        services()
     })
     const galleryDiv = document.createElement('div');
     galleryDiv.setAttribute('id', "gallery");
