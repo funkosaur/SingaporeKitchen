@@ -5,6 +5,7 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
+    services: './src/services.js',
   },
   devtool: 'inline-source-map',
   devServer: {
