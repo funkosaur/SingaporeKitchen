@@ -31,7 +31,29 @@ const services = (() => {
   infoDiv.appendChild(deliveryAreas);
   const paymentDiv = document.createElement("p");
   paymentDiv.setAttribute('id', "paymentDiv");
+  paymentDiv.textContent = "PLEASE ALLOW A MINIMUM OF 45 MINS FOR DELIVERY \r\n"
+  paymentDiv.textContent += "PAYMENT BY CASH OR ORDER ONLINE FOR CARD PAYMENTS \r\n"
+  paymentDiv.textContent += "CREDIT CARD ACCEPTED FOR PICKUP";
   infoDiv.appendChild(paymentDiv);
+  const homeDeliveryUl = document.createElement("ul");
+  const homeDeliveryLi = document.createElement("li");
+  homeDeliveryUl.textContent = "HOME DELIVERY SERVICE"
+  homeDeliveryLi.textContent = "5:30 PM - 10:30 PM"
+  infoDiv.appendChild(homeDeliveryUl);
+  homeDeliveryUl.appendChild(homeDeliveryLi);
+  const openingHours = document.createElement("ul");
+  const sunday = document.createElement("li");
+  const time = document.createElement("li");
+  const daysaWeek = document.createElement("li");
+  openingHours.textContent = "OPENING HOURS";
+  sunday.textContent = "SUNDAY - SATURDAY";
+  time.textContent = "5:00 PM - 10:45 PM";
+  daysaWeek.textContent = "7 DAYS A WEEK";
+  infoDiv.appendChild(openingHours);
+  openingHours.appendChild(sunday);
+  openingHours.appendChild(time);
+  openingHours.appendChild(daysaWeek);
+
 
 
   
