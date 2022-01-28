@@ -1,4 +1,3 @@
-import dumplingsImg from './images/dumpling.jpg'
 
 const services = (() => {
   document.body.style.gridTemplateRows = "100vh 60em 20vh"

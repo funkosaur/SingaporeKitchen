@@ -88,6 +88,14 @@ const heading = (() => {
   navDiv.appendChild(allergensDiv);
   headerDiv.appendChild(navDiv);
   header.appendChild(headerDiv);
+
+  let stickyNavbar = navDiv.offsetTop;
+
+  window.addEventListener("scroll", () => {
+    if(window.pageYOffset >= stickyNavbar){
+      navDiv.classList.add("stickyBar");
+    } else {navDiv.classList.remove("stickyBar");}
+  })
 })();
 
 const contentDivs = (() => {
