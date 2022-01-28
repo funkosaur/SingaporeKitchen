@@ -9,6 +9,7 @@ import facebookImg from "./images/facebook.png";
 import instagramImg from "./images/instagram.png";
 import twitterImg from "./images/twitter.png";
 import services from "./services.js";
+import gallery from "./gallery.js";
 
 const heading = (() => {
   const header = document.getElementById("myHeader");
@@ -43,9 +44,7 @@ const heading = (() => {
   const homeDiv = document.createElement("div");
   homeDiv.setAttribute("id", "home");
   homeDiv.addEventListener("click", () => {
-    if (contentDiv.firstChild.id == "offersAndMenu") {
-        return;
-      }
+    if (contentDiv.firstChild.id == "offersAndMenu") return
     while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
     contentDivs.populateContentDivs();
   });
@@ -62,9 +61,7 @@ const heading = (() => {
   servicesDiv.classList.add("navigation");
   servicesDiv.textContent = "Services";
   servicesDiv.addEventListener("click", () => {
-    if (contentDiv.firstChild.id == "divInsideContent") {
-      return;
-    }
+    if (contentDiv.firstChild.id == "divInsideContent") return
     while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
     services();
   });
@@ -72,6 +69,11 @@ const heading = (() => {
   galleryDiv.setAttribute("id", "gallery");
   galleryDiv.classList.add("navigation");
   galleryDiv.textContent = "Gallery";
+  galleryDiv.addEventListener("click", () => {
+    if (contentDiv.firstChild.id == "galleryDiv") return
+    while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
+    gallery();
+  });
   const contactDiv = document.createElement("div");
   contactDiv.setAttribute("id", "contact");
   contactDiv.classList.add("navigation");
