@@ -3,6 +3,7 @@
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -99,6 +100,7 @@ header {
   font-family: var(--main-font);
   font-size: 1.3em;
   cursor: pointer;
+  user-select: none;
 }
 
 .navigation:hover {
@@ -181,6 +183,7 @@ header {
   font-size: 2.5em;
   font-weight: bold;
   font-family: var(--main-font);
+  line-height: 1.2em;
 }
 
 #offersText::before {
@@ -417,7 +420,6 @@ line-height: 2em;
 .galleryImages {
   max-width: 100%;
   height: 100%;
-  border-radius: 10px;
   position: relative;
   text-align: center;
   color: white;
@@ -427,15 +429,44 @@ line-height: 2em;
 .galleryImages img {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
+}
+
+.textOverImage:hover{
+  background-color: rgba(32, 32, 32,0.5);
 }
 
 .textOverImage {
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%)
-  
- 
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.844);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: 250ms transform;
+}
+
+#selectedImage {
+  max-height: 100%;
 }
 
 

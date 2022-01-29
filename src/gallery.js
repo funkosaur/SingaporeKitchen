@@ -18,17 +18,33 @@ const gallery = (() => {
         const divOfImages = document.createElement("div");
         const image = document.createElement("img");
         image.src = require(`./images/gallery/${index}.jpg`);
-        console.log(`${index}`)
         divOfImages.classList.add("galleryImages");
         const textOverImage = document.createElement("div");
         textOverImage.classList.add("textOverImage");
-        textOverImage.textContent = `${index}`;
 
-        image.addEventListener("click", () =>{
-            //popup
+        textOverImage.addEventListener("click", () =>{
+            popup.style.transform = "translateY(0)";
+            selectedImage.src = require(`./images/gallery/${index}.jpg`);
         });
 
-        image.addEventListener("mouseover", () =>{
+        popup.addEventListener("click", () => {
+            popup.style.transform = "translateY(-100%)";
+        })
+
+        textOverImage.addEventListener("mouseover", () =>{
+            textOverImage.textContent = `${index}`;
+            image.style.transform = "translateY(-2px)";
+            textOverImage.style.height = "102%";
+            image.style.boxShadow = "0px 0px 10px 0px rgba(0,0,0,0.75)"
+            
+     
+        });
+
+        textOverImage.addEventListener("mouseout", () =>{
+            textOverImage.textContent = "";
+            image.style.transform = "";
+            image.style.boxShadow = ""
+            
 
         })
         divOfImages.appendChild(image);

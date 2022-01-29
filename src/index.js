@@ -44,6 +44,8 @@ const heading = (() => {
   const homeDiv = document.createElement("div");
   homeDiv.setAttribute("id", "home");
   homeDiv.addEventListener("click", () => {
+    if(contentDiv.firstChild.id == "offersAndMenu"){const contactDiv = document.querySelector("#offersAndMenu");
+    contactDiv.scrollIntoView();}
     if (contentDiv.firstChild.id == "offersAndMenu") return
     while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
     contentDivs.populateContentDivs();
@@ -78,6 +80,15 @@ const heading = (() => {
   contactDiv.setAttribute("id", "contact");
   contactDiv.classList.add("navigation");
   contactDiv.textContent = "Contact";
+  contactDiv.addEventListener("click", () => {
+    if(contentDiv.firstChild.id == "offersAndMenu"){const contactDiv = document.querySelector("#contactPage");
+    contactDiv.scrollIntoView();}
+    if (contentDiv.firstChild.id == "offersAndMenu") return
+    while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
+    contentDivs.populateContentDivs();
+    const contactDiv = document.querySelector("#contactPage");
+    contactDiv.scrollIntoView();
+  })
   const allergensDiv = document.createElement("div");
   allergensDiv.setAttribute("id", "allergens");
   allergensDiv.classList.add("navigation");
@@ -220,7 +231,7 @@ const contentDivs = (() => {
     contentDiv.appendChild(mapOfRestaurantDiv);
   };
   populateContentDivs();
-  return { populateContentDivs };
+  return { populateContentDivs , contactPage};
 })();
 
 const footer = (() => {
