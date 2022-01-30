@@ -1,1 +1,0 @@
-contentDiv.style.background = "url(./images/dumpling.jpg ) center center / cover fixed";

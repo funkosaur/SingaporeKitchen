@@ -44,11 +44,13 @@ const heading = (() => {
   const homeDiv = document.createElement("div");
   homeDiv.setAttribute("id", "home");
   homeDiv.addEventListener("click", () => {
-    if(contentDiv.firstChild.id == "offersAndMenu"){const contactDiv = document.querySelector("#offersAndMenu");
+    if(contentDiv.firstChild.id == "offersAndMenu"){const contactDiv = document.querySelector("#myHeader");
     contactDiv.scrollIntoView();}
     if (contentDiv.firstChild.id == "offersAndMenu") return
     while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
     contentDivs.populateContentDivs();
+    const contactDiv = document.querySelector("#myHeader");
+    contactDiv.scrollIntoView();
   });
   homeDiv.classList.add("navigation");
   homeDiv.textContent = "Home";
@@ -66,15 +68,21 @@ const heading = (() => {
     if (contentDiv.firstChild.id == "divInsideContent") return
     while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
     services();
+    const contactDiv = document.querySelector("#divInsideContent");
+    contactDiv.scrollIntoView();
   });
   const galleryDiv = document.createElement("div");
   galleryDiv.setAttribute("id", "gallery");
   galleryDiv.classList.add("navigation");
   galleryDiv.textContent = "Gallery";
   galleryDiv.addEventListener("click", () => {
+    if(contentDiv.firstChild.id == "galleryDiv"){const contactDiv = document.querySelector("#galleryDiv");
+    contactDiv.scrollIntoView();}
     if (contentDiv.firstChild.id == "galleryDiv") return
     while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
     gallery();
+    const contactDiv = document.querySelector("#galleryDiv");
+    window.scrollTo(0, 808)
   });
   const contactDiv = document.createElement("div");
   contactDiv.setAttribute("id", "contact");
