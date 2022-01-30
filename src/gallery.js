@@ -1,6 +1,6 @@
 
 const gallery = (() => {
-    document.body.style.gridTemplateRows = "100vh 100em 20vh"
+    document.body.style.gridTemplateRows = "100vh 100em 20vh";
     const contentDiv = document.querySelector("#content");
     contentDiv.style.gridColumn = "2/3";
     const galleryDiv = document.createElement("div");

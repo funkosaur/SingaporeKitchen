@@ -10,6 +10,8 @@ import instagramImg from "./images/instagram.png";
 import twitterImg from "./images/twitter.png";
 import services from "./services.js";
 import gallery from "./gallery.js";
+import pdfFile from "./images/singaporeKitchenMenu.pdf"
+import allergens from "./allergens.js"
 
 const heading = (() => {
   const header = document.getElementById("myHeader");
@@ -96,11 +98,20 @@ const heading = (() => {
     contentDivs.populateContentDivs();
     const contactDiv = document.querySelector("#contactPage");
     contactDiv.scrollIntoView();
-  })
+  });
   const allergensDiv = document.createElement("div");
   allergensDiv.setAttribute("id", "allergens");
   allergensDiv.classList.add("navigation");
   allergensDiv.textContent = "Allergens";
+  allergensDiv.addEventListener("click", () => {
+    if(contentDiv.firstChild.id == "allergensDiv"){const contactDiv = document.querySelector("#allergensDiv");
+    contactDiv.scrollIntoView();}
+    if (contentDiv.firstChild.id == "allergensDiv") return
+    while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
+    allergens();
+    const contactDiv = document.querySelector("#allergensDiv");
+    contactDiv.scrollIntoView();
+  });
   navDiv.appendChild(homeDiv);
   navDiv.appendChild(orderOnlineDiv);
   navDiv.appendChild(servicesDiv);
@@ -146,8 +157,7 @@ const contentDivs = (() => {
     menuPdf.textContent = "If you would like to view our menu click here:";
     const pdfButton = document.createElement("a", "pdfButton");
     pdfButton.target = "_blank";
-    pdfButton.href =
-      "https://www.singaporekitchen.co.uk/_files/ugd/38e767_3dfd7535ccc749e59c94a341947ca1e2.pdf";
+    pdfButton.href = pdfFile;
     pdfButton.setAttribute("id", "pdfButton");
     menuPdf.appendChild(pdfButton);
     pdfButton.textContent = "MENU PDF";

@@ -469,6 +469,14 @@ line-height: 2em;
   max-height: 100%;
 }
 
+#allergensDiv {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 2em;
+}
+
 
 @media only screen and (max-width: 1026px) {
   .sticky {
