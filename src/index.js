@@ -43,6 +43,16 @@ const heading = (() => {
   headerDiv.appendChild(mottoButton);
   const navDiv = document.createElement("div");
   navDiv.classList.add("navbar");
+  window.addEventListener("scroll", () => {
+    if(window.scrollY >= 815){
+      navDiv.style.borderTopLeftRadius = "0px";
+      navDiv.style.borderTopRightRadius = "0px";
+    }else {
+      navDiv.style.borderTopLeftRadius = "10px";
+      navDiv.style.borderTopRightRadius = "10px";
+    }
+    
+  });
   const homeDiv = document.createElement("div");
   homeDiv.setAttribute("id", "home");
   homeDiv.addEventListener("click", () => {

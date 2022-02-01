@@ -86,6 +86,7 @@ header {
   justify-content: space-around;
   width: 100%;
   height: 8%;
+  overflow: hidden;
 }
 
 .navigation {
@@ -102,6 +103,7 @@ header {
   cursor: pointer;
   user-select: none;
 }
+
 
 .navigation:hover {
   background-color: var(--brightYellow);
@@ -475,6 +477,49 @@ line-height: 2em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 2em;
+}
+
+#allergensHeader {
+  align-self: center;
+  margin-bottom: 1em;
+}
+
+#underHeader {
+  margin-bottom: 1em;
+}
+
+#firstAdvicePara {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#secondAdvicePara {
+  margin-bottom: 2em;
+}
+
+#leftInformation {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  font-family: var(--main-font);
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+#foodAdviceLink {
+  color: white;
+}
+
+#pdfDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+
+#pdfDiv img {
+  width:30%;
+  height: 100%;
 }
 
 

@@ -1,4 +1,5 @@
-import allergensImage from "./images/allergens.webp"
+import allergensImage from "./images/allergens.webp";
+import pdfLink from "./images/pdf.png";
 
 const allergens = (() => {
     document.body.style.gridTemplateRows = "100vh 110em 20vh";
@@ -28,7 +29,31 @@ const allergens = (() => {
         allergen.textContent = `${allergens}`;
         allergen.classList.add("allergens");
         leftInformation.appendChild(allergen);
-    })
+    });
+    const firstAdvicePara = document.createElement("p");
+    firstAdvicePara.setAttribute("id","firstAdvicePara");
+    firstAdvicePara.textContent = "If you suffer from allergies to these or any products, please get in touch with us before ordering. We can not be held responsible for any negligence due on your part.";
+    leftInformation.appendChild(firstAdvicePara);
+    const secondAdvicePara = document.createElement("p");
+    secondAdvicePara.setAttribute("id","secondAdvicePara");
+    secondAdvicePara.textContent = "For more information regarding allergen advice please consult the Food Standards Agency Website.";
+    leftInformation.appendChild(secondAdvicePara);
+    const foodAdviceLink = document.createElement("a");
+    foodAdviceLink.setAttribute("id", "foodAdviceLink")
+    foodAdviceLink.href = "http://www.food.gov.uk/science/allergy-intolerance/";
+    foodAdviceLink.textContent = "http://www.food.gov.uk/science/allergy-intolerance/";
+    leftInformation.appendChild(foodAdviceLink);
+    const pdfDiv = document.createElement("div");
+    pdfDiv.setAttribute("id", "pdfDiv");
+    const pdfImage = document.createElement("img");
+    pdfImage.src = pdfLink;
+    const pdfPara = document.createElement("p");
+    pdfPara.textContent = "PDF LIST OF ALLERGENS ON OUR MENU";
+    pdfDiv.appendChild(pdfImage);
+    pdfDiv.appendChild(pdfPara);
+    leftInformation.appendChild(pdfDiv);
+
+
     
 
 
