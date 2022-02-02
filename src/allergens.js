@@ -1,5 +1,6 @@
 import allergensImage from "./images/allergens.webp";
 import pdfLink from "./images/pdf.png";
+import pdfFile from "./images/allergenpdf.pdf";
 
 const allergens = (() => {
     document.body.style.gridTemplateRows = "100vh 95em 20vh";
@@ -47,6 +48,9 @@ const allergens = (() => {
     pdfDiv.setAttribute("id", "pdfDiv");
     const pdfImage = document.createElement("img");
     pdfImage.src = pdfLink;
+    pdfImage.addEventListener("click", ()=>{
+        window.open(pdfFile);
+    })
     const pdfPara = document.createElement("p");
     pdfPara.textContent = "PDF LIST OF ALLERGENS ON OUR MENU";
     pdfDiv.appendChild(pdfImage);

@@ -89,7 +89,7 @@ const heading = (() => {
   galleryDiv.textContent = "Gallery";
   galleryDiv.addEventListener("click", () => {
     if(contentDiv.firstChild.id == "galleryDiv"){const contactDiv = document.querySelector("#galleryDiv");
-    contactDiv.scrollIntoView();}
+    window.scrollTo(0, 808);}
     if (contentDiv.firstChild.id == "galleryDiv") return
     while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
     gallery();
@@ -114,13 +114,11 @@ const heading = (() => {
   allergensDiv.classList.add("navigation");
   allergensDiv.textContent = "Allergens";
   allergensDiv.addEventListener("click", () => {
-    if(contentDiv.firstChild.id == "allergensDiv"){const contactDiv = document.querySelector("#allergensDiv");
-    contactDiv.scrollIntoView();}
+    if(contentDiv.firstChild.id == "allergensDiv"){window.scrollTo(0, 808)}
     if (contentDiv.firstChild.id == "allergensDiv") return
     while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
     allergens();
-    const contactDiv = document.querySelector("#allergensDiv");
-    contactDiv.scrollIntoView();
+    window.scrollTo(0, 808);
   });
   navDiv.appendChild(homeDiv);
   navDiv.appendChild(orderOnlineDiv);
@@ -142,7 +140,7 @@ const heading = (() => {
 
 const contentDivs = (() => {
   const populateContentDivs = () => {
-    document.body.style.gridTemplateRows = "100vh 160em 20vh";
+    if(window.innerWidth <= 818){document.body.style.gridTemplateRows = "100vh 200em 20vh";}
     const contentDiv = document.querySelector("#content");
     contentDiv.style.gridColumn = "2/3";
     const offersAndMenu = document.createElement("div");
@@ -283,6 +281,7 @@ const footer = (() => {
   openingHours.classList.add("footerDivs");
   openingHours.textContent = "OPENING HOURS";
   const openingHoursBottom = document.createElement("p");
+  openingHours.setAttribute("id", "openingHours");
   openingHoursBottom.setAttribute("id", "openingHoursBottom");
   openingHoursBottom.textContent = "Sunday - Saturday \r\n";
   openingHoursBottom.textContent += "5:00pm - 10:00pm";
@@ -299,6 +298,7 @@ const footer = (() => {
   footerSubDiv.appendChild(contactDiv);
   const followDiv = document.createElement("div");
   followDiv.classList.add("footerDivs");
+  followDiv.setAttribute("id", "followDiv")
   followDiv.textContent = "FOLLOW";
   const followDivBottom = document.createElement("div");
   followDivBottom.setAttribute("id", "followDivBottom");

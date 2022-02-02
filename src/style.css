@@ -520,15 +520,23 @@ line-height: 2em;
 
 #pdfDiv {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-top: 2em;
+  font-size: 1em;
 }
 
 #pdfDiv img {
-  width:30%;
+  width:20%;
   height: 100%;
+  cursor: pointer;
 }
+
+#pdfDiv p {
+  width:75%;
+}
+
+
 
 
 @media only screen and (max-width: 1026px) {
@@ -541,6 +549,7 @@ line-height: 2em;
   #offersAndMenu {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 0.3fr 0.7fr;
+    height: 55%;
   }
 
   #otherWaysText {
@@ -566,4 +575,51 @@ line-height: 2em;
   #contactPage {
     flex-direction: column;
   }
+
+  #mapOfRestaurantDiv{
+    height: 15%;
+  }
+
+  #contactForm {
+    width: 50%;
+    margin-top: 1.5em;
+  }
+
+  #storeDetails img {
+    height: 90%;
+    width: 50%;
+  }
+
+  #storeDetails{
+    width: 80%;
+  }
+
+  #contactPage {
+    height: 30%;
+  }
+
+  #followDiv {
+    display: none;
+  }
+
+  #openingHours {
+    display: none;
+  }
+
+  #offersText::before {
+    display: none;
+  }
+  
+  #offersText::after {
+    display: none;
+  }
+
+  #orderOnline {
+    display: none;
+  }
+
+  #contact {
+    display: none;
+  }
+
 }
