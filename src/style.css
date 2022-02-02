@@ -410,6 +410,8 @@ line-height: 2em;
   margin-top: 1em;
   font-size: 1.5em;
   list-style-type: disc;
+  list-style-position: inside;
+  color: var(--brightYellow);
 }
 
 #galleryDiv{
@@ -465,6 +467,7 @@ line-height: 2em;
   align-items: center;
   transform: translateY(-100%);
   transition: 250ms transform;
+  z-index: 5;
 }
 
 #selectedImage {
@@ -504,6 +507,11 @@ line-height: 2em;
   font-family: var(--main-font);
   font-size: 1.8em;
   font-weight: bold;
+  color: var(--white);
+}
+
+#rightAllergensPoster img{
+  width: 100%;
 }
 
 #foodAdviceLink {
@@ -524,7 +532,38 @@ line-height: 2em;
 
 
 @media only screen and (max-width: 1026px) {
-  .sticky {
+  .stickyBar {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 818px) {
+  #offersAndMenu {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 0.3fr 0.7fr;
+  }
+
+  #otherWaysText {
+    grid-row: 4/5;
+  }
+
+  #otherWaysDiv {
+    grid-row: 5/6;
+  }
+
+  #menuPdf {
+    grid-column: 1/2;
+  }
+
+  #offersText {
+    grid-column: 1/2;
+  }
+
+  #foodHygiene {
+    grid-row: 3/4;
+  }
+
+  #contactPage {
+    flex-direction: column;
   }
 }

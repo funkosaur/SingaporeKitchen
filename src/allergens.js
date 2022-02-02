@@ -2,7 +2,7 @@ import allergensImage from "./images/allergens.webp";
 import pdfLink from "./images/pdf.png";
 
 const allergens = (() => {
-    document.body.style.gridTemplateRows = "100vh 110em 20vh";
+    document.body.style.gridTemplateRows = "100vh 95em 20vh";
     const contentDiv = document.querySelector("#content");
     contentDiv.style.gridColumn = "2/3";
     const allergensDiv = document.createElement("div");
