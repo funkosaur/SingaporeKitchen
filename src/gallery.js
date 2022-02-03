@@ -1,6 +1,17 @@
 
 const gallery = (() => {
     document.body.style.gridTemplateRows = "100vh 100em 20vh";
+    if(window.innerWidth <= 1000){document.body.style.gridTemplateRows = "100vh 155em 20vh"};
+    if(window.innerWidth <= 750){document.body.style.gridTemplateRows = "100vh 235em 20vh"};
+    if(window.innerWidth <= 502){document.body.style.gridTemplateRows = "100vh 550em 20vh"};
+    window.addEventListener("resize", ()=>{
+        if(window.innerWidth >= 1000){document.body.style.gridTemplateRows = "100vh 100em 20vh"};
+        if(window.innerWidth <= 1000){document.body.style.gridTemplateRows = "100vh 155em 20vh"};
+        if(window.innerWidth <= 850){document.body.style.gridTemplateRows = "100vh 135em 20vh"};
+        if(window.innerWidth <= 750){document.body.style.gridTemplateRows = "100vh 235em 20vh"};
+        if(window.innerWidth <= 650){document.body.style.gridTemplateRows = "100vh 205em 20vh"};
+        if(window.innerWidth <= 502){document.body.style.gridTemplateRows = "100vh 550em 20vh"};
+    })
     const contentDiv = document.querySelector("#content");
     contentDiv.style.gridColumn = "2/3";
     const galleryDiv = document.createElement("div");

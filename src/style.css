@@ -83,7 +83,7 @@ header {
 
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   height: 8%;
   overflow: hidden;
@@ -536,12 +536,26 @@ line-height: 2em;
   width:75%;
 }
 
+#otherWaysDiv img{
+  width: 25%;
+  height: 65%;
+}
+
 
 
 
 @media only screen and (max-width: 1026px) {
   .stickyBar {
     width: 100%;
+  }
+  #info {
+    margin-left: 1em;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    grid-template-rows: 100vh 200em 20vh;
   }
 }
 
@@ -622,4 +636,76 @@ line-height: 2em;
     display: none;
   }
 
+  #info p {
+    font-size: 1.2em;
+  }
+  
+  #info h1 {
+    font-size: 1.7em;
+    font-weight: bold;
+  }
+
+  #offersText p{
+    margin-top: 1em;
+  }
+
+  #allergensDiv {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 1em;
+  }
+
+  #leftInformation {
+    margin-left: 1em;
+  }
+
+}
+
+
+@media only screen and (max-width: 490px) {
+  .footerDivs:first-child {
+    display: none;
+  }
+
+  #storeDetails {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  #house img {
+    width: 100%;
+  }
+
+  #contactForm {
+    width: 75%;
+  }
+
+  #orderButton {
+    width: 60%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    height: 40%;
+  }
+
+  .motto-button {
+    height: 40%;
+  }
+  #offersText p{
+    width: 80%;
+    font-size: 1.5em;
+    margin-top: 0em;
+  }
+
+  #menuPdf {
+    text-align: center;
+  }
+
+  #otherWaysDiv {
+    flex-direction: column;
+  }
+
+  #otherWaysDiv img{
+    width: 60%;
+    height: 65%;
+  }
 }

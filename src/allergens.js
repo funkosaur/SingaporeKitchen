@@ -4,6 +4,13 @@ import pdfFile from "./images/allergenpdf.pdf";
 
 const allergens = (() => {
     document.body.style.gridTemplateRows = "100vh 95em 20vh";
+    if(window.innerWidth <= 818){document.body.style.gridTemplateRows = "100vh 200em 20vh"};
+    window.addEventListener("resize", ()=>{
+        if(window.innerWidth >= 818){document.body.style.gridTemplateRows = "100vh 95em 20vh"};
+        if(window.innerWidth <= 818){document.body.style.gridTemplateRows = "100vh 200em 20vh"};
+        if(window.innerWidth <= 680){document.body.style.gridTemplateRows = "100vh 180em 20vh"};
+        if(window.innerWidth <= 550){document.body.style.gridTemplateRows = "100vh 160em 20vh"};
+    })
     const contentDiv = document.querySelector("#content");
     contentDiv.style.gridColumn = "2/3";
     const allergensDiv = document.createElement("div");

@@ -129,7 +129,7 @@ const heading = (() => {
   headerDiv.appendChild(navDiv);
   header.appendChild(headerDiv);
 
-  let stickyNavbar = navDiv.offsetTop;
+  let stickyNavbar = homeDiv.offsetTop;
 
   window.addEventListener("scroll", () => {
     if(window.pageYOffset >= stickyNavbar){
@@ -140,7 +140,7 @@ const heading = (() => {
 
 const contentDivs = (() => {
   const populateContentDivs = () => {
-    if(window.innerWidth <= 818){document.body.style.gridTemplateRows = "100vh 200em 20vh";}
+    document.body.style.gridTemplateRows = "100vh 160em 20vh";
     const contentDiv = document.querySelector("#content");
     contentDiv.style.gridColumn = "2/3";
     const offersAndMenu = document.createElement("div");
@@ -176,16 +176,10 @@ const contentDivs = (() => {
     otherWaysDiv.setAttribute("id", "otherWaysDiv");
     const deliverooImg = document.createElement("img");
     deliverooImg.src = deliverooLogo;
-    deliverooImg.style.width = "25%";
-    deliverooImg.style.height = "65%";
     const justEatImg = document.createElement("img");
     justEatImg.src = justEatLogo;
-    justEatImg.style.width = "25%";
-    justEatImg.style.height = "65%";
     const uberEatsImg = document.createElement("img");
     uberEatsImg.src = uberEatsLogo;
-    uberEatsImg.style.width = "25%";
-    uberEatsImg.style.height = "65%";
     otherWaysDiv.appendChild(deliverooImg);
     otherWaysDiv.appendChild(justEatImg);
     otherWaysDiv.appendChild(uberEatsImg);
@@ -245,6 +239,14 @@ const contentDivs = (() => {
     storeDetailsDiv.textContent += "Hove East Sussex BN33YP \r\n";
     storeDetailsDiv.textContent += "01273736251 \r\n";
     storeDetailsDiv.textContent += "singaporekitchenhove@gmail.com";
+    if(window.innerWidth <= 517){
+      storeDetailsDiv.textContent = "19 Blachington Road \r\n";
+    storeDetailsDiv.textContent += "Hove East Sussex \r\n";
+    storeDetailsDiv.textContent += " BN33YP\r\n";
+    storeDetailsDiv.textContent += "01273736251 \r\n";
+    storeDetailsDiv.textContent += "singaporekitchenhove\r\n";
+    storeDetailsDiv.textContent += "@gmail.com";
+    }
     const mapOfRestaurantDiv = document.createElement("div");
     const mapOfRestaurant = document.createElement("iframe");
     mapOfRestaurant.src =
