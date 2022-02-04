@@ -2,14 +2,46 @@
 
 > From The Odin Project's [curriculum](https://www.theodinproject.com/courses/javascript/lessons/restaurant-page)
 
-The restaurant website is a single page application created using ES6 modules, npm and Webpack. The website uses factory functions to minimise code repetition and ES6 modules to create more modular code. The HTML and CSS design for the website is basic but the JavaScript code is much cleaner than earlier projects.
+## Table of contents
 
-[![Restaurant Website Screenshot](./src/images/websitepage.png)](https://https://funkosaur.github.io/SingaporeKitchen/)
+- [Overview](#overview)
+  - [Features](#features)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
+
+## Overview
+
+### Features
+
+- [x] Single Page application with module tab switching
+- [x] Dynamically rendered using Javascript alone to generate content
+- [x] ES6 modules for modular code
+- [x] Webpack and npm to bundle the JS files into main.js
+
+
+### Screenshot
+
+![](./src/images/websitepage.png)
+
+### Links
 
 > View the project [here](https://funkosaur.github.io/SingaporeKitchen/)
 
-## Features
+## My process
 
-- [x] View the homepage, menu and contact
-- [x] ES6 modules for modular code
-- [x] Webpack and npm to bundle the JS files into main.js
+### Built with
+
+- HTML5
+- CSS
+- Flexbox
+- CSS Grid
+- Desktop-first workflow
+- Javascript
+- Webpack
+
+## Author
+
+- Website - [Mario Boykovski](https://github.com/funkosaur)
