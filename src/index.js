@@ -10,9 +10,10 @@ import instagramImg from "./images/instagram.png";
 import twitterImg from "./images/twitter.png";
 import services from "./services.js";
 import gallery from "./gallery.js";
-import pdfFile from "./images/singaporeKitchenMenu.pdf"
-import allergens from "./allergens.js"
+import pdfFile from "./images/singaporeKitchenMenu.pdf";
+import allergens from "./allergens.js";
 
+//Creating the header module
 const heading = (() => {
   const header = document.getElementById("myHeader");
   const contentDiv = document.querySelector("#content");
@@ -44,21 +45,24 @@ const heading = (() => {
   const navDiv = document.createElement("div");
   navDiv.classList.add("navbar");
   window.addEventListener("scroll", () => {
-    if(window.scrollY >= 815){
+    if (window.scrollY >= 815) {
       navDiv.style.borderTopLeftRadius = "0px";
       navDiv.style.borderTopRightRadius = "0px";
-    }else {
+    } else {
       navDiv.style.borderTopLeftRadius = "10px";
       navDiv.style.borderTopRightRadius = "10px";
     }
-    
   });
   const homeDiv = document.createElement("div");
   homeDiv.setAttribute("id", "home");
+// When clicked home button will scroll to home or populate the content
+// div if on another module
   homeDiv.addEventListener("click", () => {
-    if(contentDiv.firstChild.id == "offersAndMenu"){const contactDiv = document.querySelector("#myHeader");
-    contactDiv.scrollIntoView();}
-    if (contentDiv.firstChild.id == "offersAndMenu") return
+    if (contentDiv.firstChild.id == "offersAndMenu") {
+      const contactDiv = document.querySelector("#myHeader");
+      contactDiv.scrollIntoView();
+    }
+    if (contentDiv.firstChild.id == "offersAndMenu") return;
     while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
     contentDivs.populateContentDivs();
     const contactDiv = document.querySelector("#myHeader");
@@ -76,34 +80,45 @@ const heading = (() => {
   servicesDiv.setAttribute("id", "services");
   servicesDiv.classList.add("navigation");
   servicesDiv.textContent = "Services";
+// Services navigation link populates the content with the services module
   servicesDiv.addEventListener("click", () => {
-    if (contentDiv.firstChild.id == "divInsideContent") return
+    if (contentDiv.firstChild.id == "divInsideContent") {
+      const divInsideContent = document.querySelector("#divInsideContent");
+      divInsideContent.scrollIntoView();
+    }
+    if (contentDiv.firstChild.id == "divInsideContent") return;
     while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
     services();
-    const contactDiv = document.querySelector("#divInsideContent");
-    contactDiv.scrollIntoView();
+    const divInsideContent = document.querySelector("#divInsideContent");
+    divInsideContent.scrollIntoView();
   });
   const galleryDiv = document.createElement("div");
   galleryDiv.setAttribute("id", "gallery");
   galleryDiv.classList.add("navigation");
   galleryDiv.textContent = "Gallery";
+// Gallery navigation link populates the content with the gallery module
+// and scrolls to a specific place
   galleryDiv.addEventListener("click", () => {
-    if(contentDiv.firstChild.id == "galleryDiv"){const contactDiv = document.querySelector("#galleryDiv");
-    window.scrollTo(0, 808);}
-    if (contentDiv.firstChild.id == "galleryDiv") return
+    if (contentDiv.firstChild.id == "galleryDiv") {
+      window.scrollTo(0, 808);
+    }
+    if (contentDiv.firstChild.id == "galleryDiv") return;
     while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
     gallery();
-    const contactDiv = document.querySelector("#galleryDiv");
-    window.scrollTo(0, 808)
+    window.scrollTo(0, 808);
   });
   const contactDiv = document.createElement("div");
   contactDiv.setAttribute("id", "contact");
   contactDiv.classList.add("navigation");
   contactDiv.textContent = "Contact";
+// Contact navigation link populates the content with the home module
+// and then scrolls down to the contact section
   contactDiv.addEventListener("click", () => {
-    if(contentDiv.firstChild.id == "offersAndMenu"){const contactDiv = document.querySelector("#contactPage");
-    contactDiv.scrollIntoView();}
-    if (contentDiv.firstChild.id == "offersAndMenu") return
+    if (contentDiv.firstChild.id == "offersAndMenu") {
+      const contactDiv = document.querySelector("#contactPage");
+      contactDiv.scrollIntoView();
+    }
+    if (contentDiv.firstChild.id == "offersAndMenu") return;
     while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
     contentDivs.populateContentDivs();
     const contactDiv = document.querySelector("#contactPage");
@@ -113,9 +128,12 @@ const heading = (() => {
   allergensDiv.setAttribute("id", "allergens");
   allergensDiv.classList.add("navigation");
   allergensDiv.textContent = "Allergens";
+// Allergens navigation link populates the content with the allergens module
   allergensDiv.addEventListener("click", () => {
-    if(contentDiv.firstChild.id == "allergensDiv"){window.scrollTo(0, 808)}
-    if (contentDiv.firstChild.id == "allergensDiv") return
+    if (contentDiv.firstChild.id == "allergensDiv") {
+      window.scrollTo(0, 808);
+    }
+    if (contentDiv.firstChild.id == "allergensDiv") return;
     while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
     allergens();
     window.scrollTo(0, 808);
@@ -129,15 +147,18 @@ const heading = (() => {
   headerDiv.appendChild(navDiv);
   header.appendChild(headerDiv);
 
+// Making the navbar sticky
   let stickyNavbar = homeDiv.offsetTop;
-
   window.addEventListener("scroll", () => {
-    if(window.pageYOffset >= stickyNavbar){
+    if (window.pageYOffset >= stickyNavbar) {
       navDiv.classList.add("stickyBar");
-    } else {navDiv.classList.remove("stickyBar");}
-  })
+    } else {
+      navDiv.classList.remove("stickyBar");
+    }
+  });
 })();
 
+// Dynamically rendered home page
 const contentDivs = (() => {
   const populateContentDivs = () => {
     document.body.style.gridTemplateRows = "100vh 160em 20vh";
@@ -176,10 +197,25 @@ const contentDivs = (() => {
     otherWaysDiv.setAttribute("id", "otherWaysDiv");
     const deliverooImg = document.createElement("img");
     deliverooImg.src = deliverooLogo;
+    deliverooImg.addEventListener("click", () => {
+      window.open(
+        "https://deliveroo.co.uk/menu/brighton/hove/singapore-kitchen?utm_medium=affiliate&utm_source=google_maps_link"
+      );
+    });
     const justEatImg = document.createElement("img");
     justEatImg.src = justEatLogo;
+    justEatImg.addEventListener("click", () => {
+      window.open(
+        "https://www.just-eat.co.uk/restaurants-singaporekitchen-bn3/menu"
+      );
+    });
     const uberEatsImg = document.createElement("img");
     uberEatsImg.src = uberEatsLogo;
+    uberEatsImg.addEventListener("click", () => {
+      window.open(
+        "https://www.ubereats.com/store/singapore-kitchen/IhZzD1RKROiqqmvKDUd9-Q?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMkJOMyUyMDZCSiUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpyVG9pcl91UGRVZ1ItT2pGcVZpZkQ2TSUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E1MC44NTMzNiUyQyUyMmxvbmdpdHVkZSUyMiUzQS0wLjE3NTc4JTdE"
+      );
+    });
     otherWaysDiv.appendChild(deliverooImg);
     otherWaysDiv.appendChild(justEatImg);
     otherWaysDiv.appendChild(uberEatsImg);
@@ -239,13 +275,14 @@ const contentDivs = (() => {
     storeDetailsDiv.textContent += "Hove East Sussex BN33YP \r\n";
     storeDetailsDiv.textContent += "01273736251 \r\n";
     storeDetailsDiv.textContent += "singaporekitchenhove@gmail.com";
-    if(window.innerWidth <= 517){
+// Optimization for smaller screen sizes
+    if (window.innerWidth <= 517) {
       storeDetailsDiv.textContent = "19 Blachington Road \r\n";
-    storeDetailsDiv.textContent += "Hove East Sussex \r\n";
-    storeDetailsDiv.textContent += " BN33YP\r\n";
-    storeDetailsDiv.textContent += "01273736251 \r\n";
-    storeDetailsDiv.textContent += "singaporekitchenhove\r\n";
-    storeDetailsDiv.textContent += "@gmail.com";
+      storeDetailsDiv.textContent += "Hove East Sussex \r\n";
+      storeDetailsDiv.textContent += " BN33YP\r\n";
+      storeDetailsDiv.textContent += "01273736251 \r\n";
+      storeDetailsDiv.textContent += "singaporekitchenhove\r\n";
+      storeDetailsDiv.textContent += "@gmail.com";
     }
     const mapOfRestaurantDiv = document.createElement("div");
     const mapOfRestaurant = document.createElement("iframe");
@@ -259,9 +296,10 @@ const contentDivs = (() => {
     contentDiv.appendChild(mapOfRestaurantDiv);
   };
   populateContentDivs();
-  return { populateContentDivs , contactPage};
+  return { populateContentDivs };
 })();
 
+// Creating the footer
 const footer = (() => {
   const footerDiv = document.getElementById("footer");
   const footerSubDiv = document.createElement("div");
@@ -300,7 +338,7 @@ const footer = (() => {
   footerSubDiv.appendChild(contactDiv);
   const followDiv = document.createElement("div");
   followDiv.classList.add("footerDivs");
-  followDiv.setAttribute("id", "followDiv")
+  followDiv.setAttribute("id", "followDiv");
   followDiv.textContent = "FOLLOW";
   const followDivBottom = document.createElement("div");
   followDivBottom.setAttribute("id", "followDivBottom");
