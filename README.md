@@ -1,6 +1,6 @@
 # Singapore Kitchen
 
-> From The Odin Project's [curriculum](https://www.theodinproject.com/courses/javascript/lessons/restaurant-page)
+> Dynamically rendered restaurant homepage
 
 ## Table of contents
 
@@ -19,6 +19,7 @@
 - [x] Single Page application with module tab switching
 - [x] Dynamically rendered using Javascript alone to generate content
 - [x] ES6 modules for modular code
+- [x] Fully functioning gallery
 - [x] Webpack and npm to bundle the JS files into main.js
 
 
